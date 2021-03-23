@@ -43,10 +43,10 @@ def produce_sync(topic_name):
         if curr_iteration % 10 == 0:
             elapsed = (datetime.utcnow() - start_time).seconds
             print(f"Messages sent: {curr_iteration} | Total elapsed seconds: {elapsed}")
-            
+
             if elapsed == 5:
                 break
-            
+
         curr_iteration += 1
 
 

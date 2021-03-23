@@ -4,7 +4,7 @@ kafka-topics --create --topic kafka-arch --partitions 1 --replication-factor 1 -
 --- inspecting the directory structure
 ls -alh /var/li/kafka/data | grep kafka-arch
 
--- Produce Data 
+-- Produce Data
 kafka-console-producer --topic "kafka-arch" --broker-list localhost:9092
 
 --- Alter Kafka topics and add partitions - in this case we are adding 3 partitions
@@ -33,7 +33,7 @@ KAFKA TOPICS IN DEPTH
   compression algorithm on a topic - lz4, ztsd, snappy, gzip
 
 
-  p2p - consumption activation || consumption activation 
+  p2p - consumption activation || consumption activation
 
 
   TOPICS RECAP
@@ -60,11 +60,28 @@ MESSAGE COMPRESSION TYPES AND THEIR ADVANTAGES & DISADVANTAGES
   (lz4, snappy, zstd, gzip - compression formats)
 
 
-FURTHER READING ON KAFKA PRODUCERS & CONFIGURATIONS 
+FURTHER READING ON KAFKA PRODUCERS & CONFIGURATIONS
  - https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md
  - https://kafka.apache.org/documentation/#producerconfigs
  - https://docs.confluent.io/current/clients/confluent-kafka-python/index.html?highlight=serializer#producer
 
 
-KAFKA CONSUMERS - CREATION AND MANAGMENT OF CONSUMERS 
+KAFKA CONSUMERS - CREATION AND MANAGMENT OF CONSUMERS
 =====================================================
+
+Kafka consumer offsets - Used when one wants Kafka to pick up the entire data from the beginning of the
+streaming.
+Consumer Groups
+ - Topics | One or more partitions
+ - Kafka Consumer - Group ID - Tells consumer what consumer group a consumer depends on.
+ - Topic subscription
+  - Full topic name, or regex topic names
+
+Kafka Consumers - Reading Links
+ - https://kafka.apache.org/documentation/#consumerconfigs
+ - https://docs.confluent.io/current/clients/confluent-kafka-python/index.html?highlight=serializer#consumer
+ - https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md
+
+Measuring Performance of Kafka Consumer Code
+ 1. Lag = Latest Topic offset - Consumer topic offset
+ 2. Messages per second -- (Throughput)
