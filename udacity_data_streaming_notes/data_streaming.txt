@@ -78,10 +78,30 @@ Consumer Groups
   - Full topic name, or regex topic names
 
 Kafka Consumers - Reading Links
+===============================
  - https://kafka.apache.org/documentation/#consumerconfigs
  - https://docs.confluent.io/current/clients/confluent-kafka-python/index.html?highlight=serializer#consumer
  - https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md
 
 Measuring Performance of Kafka Consumer Code
+=============================================
  1. Lag = Latest Topic offset - Consumer topic offset
  2. Messages per second -- (Throughput)
+
+Data Streaming with Schemas
+
+Schemas can communicate version compatibility on the data as it arrives.
+
+APACHE AVRO - DATA SCHEMAS - DATA ENGINEERING SPACE
+Avro - Data Serialization system that uses binary compression.
+1. Avro Complex Types
+
+
+Schema registry --- Any applications
+Exposes an HTTP Webserver with a Rest API
+Uses zookeeper to chooser a leader
+
+KAFKA CONNECT TROUBLESHOOTING TIPS
+==================================
+Curl http:<connect_url>/connectors/<your_connector>/status (TO CHECK THE STATUS OF THE CONNECTOR)
+curl http:<connect_url>/connectors/<your_connector>/tasks/<task_id>/status (TO CHECK ON THE STATUS OF YOUR CONNECT TASK)
