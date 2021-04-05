@@ -26,7 +26,8 @@ class ClickEvent:
     #       See: https://avro.apache.org/docs/1.8.2/spec.html#schema_record
     #       See: https://fastavro.readthedocs.io/en/latest/schema.html?highlight=parse_schema#fastavro-schema
     #
-    # Note: This will not produce any output, but you can use `kafka-console-consumer` to check that messages are being produced.
+    # Note: This will not produce any output, but you can use `kafka-console-consumer` to check that messages are
+    # being produced.
     #
     schema = parse_schema(
         {
